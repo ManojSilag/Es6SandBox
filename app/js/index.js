@@ -4,6 +4,10 @@ require('styles/main.scss');
 import $ from 'jquery';
 import { log, logTitle } from 'logger';
 /* your imports */
+import * as Math from './Math.js';
 logTitle('Title');
 /* coding examples */
-log('Hi')
+
+log(Math.add(2,2))
+log(Math.sub(2,2))
+log(Math.pi)
