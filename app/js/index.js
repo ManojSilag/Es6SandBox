@@ -4,10 +4,30 @@ require('styles/main.scss');
 import $ from 'jquery';
 import { log, logTitle } from 'logger';
 /* your imports */
-import * as Math from './Math.js';
 logTitle('Title');
 /* coding examples */
 
-log(Math.add(2,2))
-log(Math.sub(2,2))
-log(Math.pi)
+
+// const arrayOne  = ['Mack', 'Niko']
+// const arrayTwo = ['Akiro', 'Ryo']
+
+// const conCat = [...arrayOne, ...arrayTwo];
+// log(conCat)
+
+// const name = 'Akiro';
+// const nameArray = [...name];
+// log(nameArray);
+
+
+const address = {
+    country: 'India',
+    city: 'Pune'
+}
+
+const name = {
+   firstName: 'RYO',
+   age: "23"
+}
+
+const person = {...address, ...name}
+log(JSON.stringify(person, null, 2))
