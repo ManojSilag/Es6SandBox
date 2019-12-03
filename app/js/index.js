@@ -7,7 +7,6 @@ import { log, logTitle } from 'logger';
 logTitle('Title');
 /* coding examples */
 
-
 // const arrayOne  = ['Mack', 'Niko']
 // const arrayTwo = ['Akiro', 'Ryo']
 
