@@ -17,7 +17,6 @@ logTitle('Title');
 // const nameArray = [...name];
 // log(nameArray);
 
-
 const address = {
     country: 'India',
     city: 'Pune'
