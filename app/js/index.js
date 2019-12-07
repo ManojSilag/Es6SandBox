@@ -1,33 +1,42 @@
 /* styling */
 require('styles/main.scss');
 /* js */
-import $ from 'jquery';
 import { log, logTitle } from 'logger';
 /* your imports */
-logTitle('Title');
-/* coding examples */
+logTitle('Object Descruturing');
 
+const getUser = () => {
+  return {
+    name: 'John',
+    surname: 'Doe',
+    gender: 'male',
+    address: {
+      country: 'United States',
+      city: 'California',
+      postCode: 'CA',
+      fullAddress: {
+        doorNumber: 22,
+        street: 'LA st'
+      }
+    },
+    age: 29
+  }
+};
 
-// const arrayOne  = ['Mack', 'Niko']
-// const arrayTwo = ['Akiro', 'Ryo']
+const user = getUser();
 
-// const conCat = [...arrayOne, ...arrayTwo];
-// log(conCat)
+// const name = user.name;
+// const age = user.age;
+// const country = user.address.country;
+const doorNumber = user.address.fullAddress.doorNumber;
 
-// const name = 'Akiro';
-// const nameArray = [...name];
-// log(nameArray);
+const { name , age, address: { country : theCountry} } = user;
 
+log(name);
+log(age);
+log(theCountry)
 
-const address = {
-    country: 'India',
-    city: 'Pune'
-}
-
-const name = {
-   firstName: 'RYO',
-   age: "23"
-}
-
-const person = {...address, ...name}
-log(JSON.stringify(person, null, 2))
+log(theName);
+log(theAge);
+log(theCountry);
+log(number);
