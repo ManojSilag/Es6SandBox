@@ -5,46 +5,35 @@ import { log, logTitle } from 'logger';
 /* your imports */
 logTitle('Es6 Classes');
 
-class Animal{
+// const apicall = new Promise((resolve, reject)=>{
 
-  constructor(name, age){
-    log(`${name} animal was created`)
-    this.name = name;
-    this.age = age;
-  }
+//   setTimeout(()=>{
+//      resolve('True')
+//   },2000)
 
-  eat(){
-    log(`${this.name} is eating`)
-  }
+//   setTimeout(()=>{
+//     reject('True')
+//  },3000)
 
-  sleep(){
-    log(`${this.name} is sleeping`)
-  }
+// })
 
+// apicall.then(result => {
+//   log(result);
+// })
+
+const RandomUsers = n => {
+  const fetchUsers = fetch(`https://randomuser.me/api/?results=${n}`)
+  fetchUsers.then(data => {
+    data.json().then(data => {
+      // log(JSON.stringify(data.results.length))
+      JSON.stringify(data.results.length)
+      data.results.forEach(element => {
+      const{ email} = element;
+       log(email);
+    });
+    
+    })
+  })
 }
 
-class Dog extends Animal {
-  constructor(name, age, breed){
-    super(name, age)
-    this.breed = breed
-  }
-
-  logBreed(){
-    log(`${this.breed} of Dog`)
-  }
-
-  logSleepfromDog(){
-    super.sleep()
-  }
-}
-
-const mike = new Dog('Mike',4,'pub');
-mike.logBreed();
-mike.sleep();
-mike.eat();
-mike.logSleepfromDog();
-
-
-// const bobby = new Animal("bobby", 2);
-// bobby.sleep();
-// bobby.eat();
+RandomUsers(50);
