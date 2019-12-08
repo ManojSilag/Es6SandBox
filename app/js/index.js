@@ -3,40 +3,48 @@ require('styles/main.scss');
 /* js */
 import { log, logTitle } from 'logger';
 /* your imports */
-logTitle('Object Descruturing');
+logTitle('Es6 Classes');
 
-const getUser = () => {
-  return {
-    name: 'John',
-    surname: 'Doe',
-    gender: 'male',
-    address: {
-      country: 'United States',
-      city: 'California',
-      postCode: 'CA',
-      fullAddress: {
-        doorNumber: 22,
-        street: 'LA st'
-      }
-    },
-    age: 29
+class Animal{
+
+  constructor(name, age){
+    log(`${name} animal was created`)
+    this.name = name;
+    this.age = age;
   }
-};
 
-const user = getUser();
+  eat(){
+    log(`${this.name} is eating`)
+  }
 
-// const name = user.name;
-// const age = user.age;
-// const country = user.address.country;
-const doorNumber = user.address.fullAddress.doorNumber;
+  sleep(){
+    log(`${this.name} is sleeping`)
+  }
 
-const { name , age, address: { country : theCountry} } = user;
+}
 
-log(name);
-log(age);
-log(theCountry)
+class Dog extends Animal {
+  constructor(name, age, breed){
+    super(name, age)
+    this.breed = breed
+  }
 
-log(theName);
-log(theAge);
-log(theCountry);
-log(number);
+  logBreed(){
+    log(`${this.breed} of Dog`)
+  }
+
+  logSleepfromDog(){
+    super.sleep()
+  }
+}
+
+const mike = new Dog('Mike',4,'pub');
+mike.logBreed();
+mike.sleep();
+mike.eat();
+mike.logSleepfromDog();
+
+
+// const bobby = new Animal("bobby", 2);
+// bobby.sleep();
+// bobby.eat();
