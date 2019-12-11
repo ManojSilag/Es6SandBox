@@ -30,7 +30,7 @@ const user = getUser();
 // const country = user.address.country;
 const doorNumber = user.address.fullAddress.doorNumber;
 
-const { name , age, address: { country : theCountry} } = user;
+const { name , age, address: { country : theCountry} } = user;  // Destructurning object
 
 log(name);
 log(age);
