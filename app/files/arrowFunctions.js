@@ -6,8 +6,6 @@ const hello = function() {
 const powers = [1,2,3,4,5].map(function(number, index) {
   return Math.pow(number, index);
 });
-
-
 const add = function(n1, n2) {
   return n1 + n2;
 };
